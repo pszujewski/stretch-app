@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: url(../images/sunshine.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+button {
+  padding: 10px 45px;
+  font-size: 26px;
+  background-color: transparent;
+  border: 2px solid #26a69a;
+  color: #26a69a;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #26a69a;
+  color: #fff;
+}
+
+.gl-container {
+  max-width: 1000px;
+  margin: 50px auto 0;
+  padding: 0;
+  display: flex;
+}
+
+.timer {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.timer h1 span {
+  padding-left: 32px;
+}
+
+#stretch-container {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+#list-group {
+  width: 0;
+  margin: 0;
+}
+
+#list-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#list-group li {
+  list-style: none;
+  padding: 5px 10px;
+  margin: 0;
+  border-bottom: 1px solid rgba(225, 225, 225, 0.6);
+}
+
+#list-group li:first-child {
+  background-color: #26a69a;
+  color: #fff;
+}
+
+.img-container, .img-container img {
+  display: inline-block;
+}
+
+.img-container {
+  max-width: 620px;
+}
+
+.img-container img {
+  width: 100%;
+}
