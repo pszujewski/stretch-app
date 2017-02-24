@@ -8,6 +8,7 @@ var State = {
 var Timer = {
   activeSeconds: 20,
   breakSeconds: 10,
+  endSeconds: "00",
   timerOn: function(seconds) {
     Timer[seconds] -= 1;
   },
@@ -23,8 +24,11 @@ var Timer = {
     var secondsStr = seconds.toString();
     var input = secondsStr.length === 1 ? "0"+secondsStr : secondsStr;
     var breakStr = "<span>break!</span>";
+    var endStr = "<span>done!</span>";
     if (State.activeDone && !State.breakDone) {
       return "<h1>00:"+input+breakStr+"</h1>";
+    } else if (seconds === "endSeconds") {
+      return "<h1>00:"+input+endStr+"</h1>";
     } else {
       return "<h1>00:"+input+"</h1>";
     }
@@ -81,7 +85,7 @@ var Stretches = {
 // Prompt page for the beginning of the app
 function makePrompt() {
   var btn = "<button class='btn'>Start</button>";
-  return "<h1>Neck and Back Stretches</h1>"+btn;
+  return "<h1 id='app-title'>Neck and Back Stretches</h1>"+btn;
 }
 
 function renderPrompt(leftWell) {
@@ -128,6 +132,8 @@ function appManager(State, Timer, Stretches) {
       State.activeDone = false;
       State.breakDone = false;
       appManager(State, Timer, Stretches);
+    } else {
+      Timer.setTimer(State, "endSeconds");
     }
   }
 }
